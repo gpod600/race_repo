@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Race.UserControls.ClubsUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             Grid.IsSharedSizeScope="True"
+             d:DesignHeight="300" d:DesignWidth="300">
+        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" SharedSizeGroup="Button"/>
+            <ColumnDefinition Width="Auto" SharedSizeGroup="Button"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <DataGrid Name="mClubs" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" ItemsSource="{Binding Path=LoadDataBinding}" VerticalGridLinesBrush="LightGray" HorizontalGridLinesBrush="LightGray">
+            </DataGrid>
+        <Button Name="mDeleteClub" Grid.Row="1" Grid.Column="1" Content="Delete Club" Click="mDeleteClub_Click"/>
+        <Button Name="mNewClub" Grid.Row="2" Grid.Column="0" Content="Add Club" Click="mNewClub_Click"/>
+        </Grid>
+</UserControl>

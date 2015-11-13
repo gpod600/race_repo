@@ -1,0 +1,35 @@
+﻿<Window x:Class="Race.NewClubWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="New Club" SizeToContent="WidthAndHeight">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="4,4,4,4"/>
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="MinWidth" Value="50"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="2,2,2,2"/>
+            <Setter Property="MinWidth" Value="250"/>
+        </Style>
+    </Window.Resources>    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition SharedSizeGroup="Button"/>
+            <ColumnDefinition SharedSizeGroup="Button"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <TextBox Name="mNewClub" Grid.Row="1" Text="" MinWidth="200" Grid.ColumnSpan="3"/>
+        <Button Grid.Row="3" Grid.Column="1" Content="Save" Name="mSaveNewClub" Click="mSaveNewClub_Click"/>
+        <Button Grid.Row="3" Grid.Column="2" Content="Close" Name="mCancelNewClub" Click="mCancelNewClub_Click" />
+
+        
+    </Grid>
+</Window>

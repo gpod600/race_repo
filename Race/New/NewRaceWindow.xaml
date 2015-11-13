@@ -1,0 +1,35 @@
+﻿<Window x:Class="Race.NewRaceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NewRaceWindow" Height="300" Width="300" Grid.IsSharedSizeScope="True">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition SharedSizeGroup="G1"/>
+            <ColumnDefinition SharedSizeGroup="G2"/>
+            <ColumnDefinition SharedSizeGroup="G3"/>            
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Name" Grid.Row="0" Grid.Column="0"/>
+        <TextBlock Text="Type" Grid.Row="0" Grid.Column="1"/>
+        <TextBlock Text="Laps" Grid.Row="0" Grid.Column="2"/>
+        
+        <TextBox Grid.Row="1" Grid.Column="0" Name="mName"/>
+        <ComboBox Grid.Row="1" Grid.Column="1" Name="mType" ItemsSource="{Binding Path=Categories}" SelectedItem="{Binding Path=SelectedCategory}"/>
+        <TextBox Grid.Row="1" Grid.Column="2" Name="mLaps" Text="3"/>
+
+        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition SharedSizeGroup="T1"/>
+                <ColumnDefinition SharedSizeGroup="T2"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Create" Name="mCreateButton" Grid.Column="1" />
+            <Button Content="Cancel" Name="mCancelButton" Grid.Column="2" />
+        </Grid>
+    </Grid>
+</Window>

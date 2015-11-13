@@ -1,0 +1,49 @@
+﻿<Window x:Class="Race.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:raceuc="clr-namespace:Race.UserControls"
+        Title="MainWindow" 
+        SizeToContent="WidthAndHeight"
+        Grid.IsSharedSizeScope="True"
+                     MinHeight="600"
+             MinWidth="600"
+        MaxHeight="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="4,4,4,4"/>
+            <Setter Property="MinHeight" Value="30"/>
+            <Setter Property="MinWidth" Value="50"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TabControl Grid.Row="0">
+                <TabItem Header="Race" Name="mRace">
+                    <raceuc:RaceUserControl x:Name="mRaceUserControl" />
+                </TabItem>
+                <TabItem Header="League"/>
+                <TabItem Header="Riders">
+                    <raceuc:RidersUserControl x:Name="mRidersUserControl" />
+                </TabItem>
+                <TabItem Header="Clubs">
+                    <raceuc:ClubsUserControl x:Name="mClubsUserControl"/>
+                </TabItem>
+            </TabControl>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="Button"/>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="Button"/>
+                    <ColumnDefinition Width="Auto" SharedSizeGroup="Button"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="2" Content="Save" Name="mSave" Click="mSave_Click"/>
+                <Button Grid.Column="3" Content="Close" Name="mClose" Click="mClose_Click"/>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>
